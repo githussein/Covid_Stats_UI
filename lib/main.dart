@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:corona_stats/screens/bottom_nav_screen.dart';
+import 'package:corona_stats/screens/screens.dart';
 
 void main() {
   runApp(MyApp());
