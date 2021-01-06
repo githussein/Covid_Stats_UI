@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         slivers: <Widget>[
           _buildHeader(screenHeight),
           _buildTips(screenHeight),
+          _buildTest(screenHeight),
         ],
       ),
     );
@@ -170,6 +171,52 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   )
                   .toList(),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  SliverToBoxAdapter _buildTest(double screenHeight) {
+    return SliverToBoxAdapter(
+      child: Container(
+        margin: const EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 20.0,
+        ),
+        padding: EdgeInsets.all(10.0),
+        height: screenHeight * 0.15,
+        decoration: BoxDecoration(
+            gradient:
+                LinearGradient(colors: [Colors.blue, Palette.primaryColor]),
+            borderRadius: BorderRadius.circular(20.0)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset('assets/images/test.png'),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Need a test?',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                Text(
+                  'Follow the instructions\nto do a test.',
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14.0,
+                  ),
+                  maxLines: 2,
+                ),
+              ],
             )
           ],
         ),
