@@ -1,6 +1,8 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:corona_stats/config/palette.dart';
 import 'package:corona_stats/config/styles.dart';
+import 'package:corona_stats/data/data.dart';
+import 'package:corona_stats/widgets/dart/bar_chart.dart';
 import 'package:corona_stats/widgets/dart/custom_app_bar.dart';
 import 'package:corona_stats/widgets/dart/stats_grid.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,14 @@ class _StatsScreenState extends State<StatsScreen> {
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             sliver: SliverToBoxAdapter(
               child: StatsGrid(),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 10.0),
+            sliver: SliverToBoxAdapter(
+              child: CasesBarChart(
+                casesList: dailyNewCasesDeList,
+              ),
             ),
           ),
         ],
